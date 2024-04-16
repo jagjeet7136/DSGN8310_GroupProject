@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generate Sales Report</title>
+    <script>
+      function generatePDF() {
+        var form = document.getElementById("reportForm");
+        form.target = "_blank";
+        form.action = "generate_report.php";
+        form.submit();
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Generate Sales Report</h2>
+    <form action="generate_report.php" method="post">
+      <input
+        type="submit"
+        name="generate_report"
+        value="Generate Sales Report"
+      />
+    </form>
+  </body>
+</html>

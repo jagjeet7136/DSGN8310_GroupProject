@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hardware Store</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        background-color: #f4f4f4;
+        color: #333;
+      }
+
+      header {
+        background-color: rgb(50, 86, 112);
+        color: #fff;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .logo img {
+        max-width: 100px;
+      }
+
+      nav {
+        margin-top: 10px;
+      }
+
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 10px;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      h2 {
+        margin-bottom: 20px;
+      }
+
+      form {
+        margin-bottom: 20px;
+      }
+
+      input[type="submit"] {
+        background-color: rgb(50, 86, 112);
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #555;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      input[type="date"] {
+        padding: 8px;
+        width: 200px;
+        margin-bottom: 10px;
+      }
+
+      footer {
+        background-color: rgb(50, 86, 112);
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+        margin-top: 20px;
+      }
+
+      footer p {
+        margin: 5px 0;
+      }
+
+      footer a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 10px;
+      }
+
+      @media screen and (max-width: 768px) {
+        .logo {
+          font-size: 20px;
+        }
+
+        nav a {
+          display: block;
+          margin: 5px 0;
+        }
+
+        footer p {
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="index.html"
+          ><img src="./images/logo.jpeg" alt="Hardware Store Logo"
+        /></a>
+      </div>
+      <nav>
+        <a href="customers.html">Customers</a>
+        <a href="orders.html">Orders</a>
+        <a href="supplier.html">Suppliers</a>
+        <a href="products.html">Products</a>
+      </nav>
+    </header>
+
+    <div class="container">
+      <h2>Generate Reports</h2>
+      <form action="generate_report.php" method="post">
+        <h3>Top 10 Spending Customers Report</h3>
+        <input
+          type="hidden"
+          name="report_type"
+          value="top_spending_customers"
+        />
+        <input
+          type="submit"
+          name="generate_report"
+          value="Generate Top 10 Spending Customers Report"
+        />
+      </form>
+      <form action="generate_report.php" method="post">
+        <h3>Generate Invoice</h3>
+        <label for="customer_id">Enter Customer ID:</label>
+        <input type="text" id="customer_id" name="customer_id" />
+        <input type="submit" name="generate_report" value="Generate Invoice" />
+        <input type="hidden" name="report_type" value="invoice" />
+      </form>
+      <form action="generate_report.php" method="post">
+        <h3>Generate Order Report Between Dates</h3>
+        <label for="start_date">Start Date:</label>
+        <input type="date" id="start_date" name="start_date" required />
+        <label for="end_date">End Date:</label>
+        <input type="date" id="end_date" name="end_date" required />
+        <input type="hidden" name="report_type" value="order_report" />
+        <input
+          type="submit"
+          name="generate_report"
+          value="Generate Order Report"
+        />
+      </form>
+    </div>
+
+    <footer>
+      <nav>
+        <a href="customers.html">Customers</a>
+        <a href="orders.html">Orders</a>
+        <a href="supplier.html">Suppliers</a>
+        <a href="products.html">Products</a>
+      </nav>
+      <p>Follow us on social media:</p>
+      <nav>
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+        <a href="#">Instagram</a>
+        <a href="#">LinkedIn</a>
+      </nav>
+      <p>Email: info@hardwarestore.com</p>
+      <p>Address: 123 Main Street, City, Country</p>
+      <p>Phone: +1234567890</p>
+      <p>&copy; 2024 Hardware Store. All rights reserved.</p>
+      <br />
+      <p>Jagjeet Singh: 8935070</p>
+      <p>Jashandeep Singh:</p>
+      <p>Lajwinderpal Singh:</p>
+    </footer>
+  </body>
+</html>
